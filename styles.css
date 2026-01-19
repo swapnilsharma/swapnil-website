@@ -1,0 +1,207 @@
+/* ============================================
+   Swapnil Sharma — Personal Holding Page
+   Minimal, editorial design system
+   ============================================ */
+
+/* Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #fafafa;
+    --color-text: #1a1a1a;
+    --color-text-secondary: #4a4a4a;
+    --color-text-muted: #6a6a6a;
+    --color-border: #e0e0e0;
+    
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+    
+    --max-width: 640px;
+    --line-height: 1.6;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    min-height: 100vh;
+}
+
+/* Layout */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-md);
+}
+
+/* Identity */
+.identity h1 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-xl);
+}
+
+/* Hero / Stance */
+.hero {
+    margin-bottom: var(--space-xl);
+}
+
+.stance {
+    font-size: 1.75rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+}
+
+/* Context */
+.context {
+    margin-bottom: var(--space-xl);
+}
+
+.context p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    max-width: 100%;
+}
+
+/* Experiments */
+.experiments {
+    margin-bottom: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.experiments h2 {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+.experiments-description {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.experiments ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.experiments li {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    padding: var(--space-xs) 0;
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.experiments li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-muted);
+}
+
+/* Contact */
+.contact {
+    margin-bottom: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+.contact > p {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.contact-links {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.contact-links a {
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--color-text);
+}
+
+.contact-links a:hover {
+    color: var(--color-text-secondary);
+    border-bottom-color: var(--color-text-secondary);
+}
+
+/* Footer */
+.footer {
+    padding-top: var(--space-2xl);
+}
+
+.footer p {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    :root {
+        --space-2xl: 4rem;
+    }
+    
+    .container {
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .stance {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: var(--space-lg) var(--space-sm);
+    }
+    
+    .stance {
+        font-size: 1.375rem;
+    }
+    
+    .identity h1 {
+        margin-bottom: var(--space-lg);
+    }
+    
+    .hero,
+    .context,
+    .experiments,
+    .contact {
+        margin-bottom: var(--space-lg);
+    }
+}
